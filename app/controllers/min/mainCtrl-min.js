@@ -1,0 +1,1 @@
+var dapxApp=angular.module("dapxApp");dapxApp.controller("mainCtrl",["$scope","$http",function(p,a){p.user="Nathan"}]);

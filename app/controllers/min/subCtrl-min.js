@@ -1,0 +1,1 @@
+var dapxApp=angular.module("dapxApp");dapxApp.controller("subCtrl",["$scope","$http","$location","subFactory",function(t,a,o,p){var s=o.path().substr(1);t.loading=!0,t.posts=p.getPosts(s).then(function(a){t.loading=!1,t.subName=a[0].data.subreddit,t.posts=a},function(t){alert(t)})}]);

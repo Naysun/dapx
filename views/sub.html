@@ -1,0 +1,12 @@
+<div ng-show="loading">Chargement...</div>
+
+<div ng-hide="loading">
+	<h1>r/{{ subName }}</h1>
+
+	<div ng-repeat="post in posts">
+		<p>
+			<a href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a> – 
+			<a href="http://reddit.com{{ post.data.permalink }}" target="_blank">Thread</a>
+		</p>
+	</div>
+</div>

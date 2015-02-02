@@ -12,7 +12,7 @@ dapxApp.factory('subFactory', function($http, $q, $timeout) {
     				}, 2000);
     			})
     			.error(function(data, status){
-    				deferred.reject('impossible de récupérer le subreddit...')
+    				deferred.reject('Impossible de récupérer les données...')
     			});
     		return deferred.promise;
     	}

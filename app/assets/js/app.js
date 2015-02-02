@@ -4,21 +4,10 @@ dapxApp.config(function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl : '../../../views/home.html',
-            controller : 'homeCtrl'
-        })
-        .when('/soccer', {
-            templateUrl : '../../../views/soccer.html',
-            controller  : 'soccerCtrl'
-        })
-        .when('/cardmagic', {
-            templateUrl : '../../../views/cardmagic.html',
-            controller  : 'cardmagicCtrl'
-        })
-        .when('/webdev', {
-            templateUrl : '../../../views/webdev.html',
-            controller  : 'webdevCtrl'
+            controller : 'mainCtrl'
         })
         .otherwise({
-        	redirectTo: '/'
+        	templateUrl : '../../../views/sub.html',
+            controller : 'subCtrl'
         });
 });
