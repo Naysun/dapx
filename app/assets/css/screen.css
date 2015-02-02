@@ -18,7 +18,7 @@ header {
       color: #FFFFFF; }
     header h3 + span {
       display: inline-block;
-      color: #ffffff; }
+      color: #FFFFFF; }
 
 aside {
   position: fixed !important;
@@ -29,6 +29,13 @@ aside {
   aside ul {
     margin: 0;
     padding: 0; }
+    aside ul li:first-child {
+      margin-top: 15px;
+      color: #000000; }
+      aside ul li:first-child span {
+        display: block;
+        margin-bottom: 15px;
+        color: #E74C3C; }
     aside ul li {
       list-style-type: none; }
       aside ul li a {

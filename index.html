@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title>Reddit app by Nathan Simon & Julien Blouet</title>
+	<title>Reddit app by Nathan Simon &amp; Julien Blouet</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="../app/assets/css/screen.css">
 	<link rel="stylesheet" href="../app/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -20,6 +20,7 @@
 	<script src="../app/services/subFactory.js"></script>
 
 	<!-- CONTROLLERS -->
+	<script src="../app/controllers/sidebarCtrl.js"></script>
 	<script src="../app/controllers/mainCtrl.js"></script>
 	<script src="../app/controllers/subCtrl.js"></script>
 
@@ -29,11 +30,17 @@
 
 	<header class="col-md-12">
 		<h3><a href="#">Reddit app</a></h3>
-		<span> - By Nathan Simon & Julien Blouet</span>
+		<span> - By Nathan Simon &amp; Julien Blouet</span>
 	</header>
 
-	<aside class="col-md-4 col-lg-3">
+	<aside ng-controller="sidebarCtrl" class="col-md-4 col-lg-3">
 		<ul>
+			<li>
+				<span>Search for a subreddit :</span>
+				<input ng-model="inputSub" type="text" placeholder="Example : aww">
+				<button ng-click="gotoSub(inputSub)">Go!</button>
+			</li>
+			<hr />
 			<li>
 				<a href="#soccer">r/soccer</a>
 				<p>News, results and discussion about the beautiful game.</p>

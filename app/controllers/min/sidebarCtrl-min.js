@@ -1,0 +1,1 @@
+var dapxApp=angular.module("dapxApp");dapxApp.controller("sidebarCtrl",["$scope","$location",function(p,o){p.gotoSub=function(p){o.path("/"+p)}}]);

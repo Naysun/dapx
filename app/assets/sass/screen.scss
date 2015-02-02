@@ -1,3 +1,7 @@
+$red : #E74C3C;
+$darkBlue : #1A2530;
+$lightBlue : #2C3E50;
+
 body.app-tpl{
 	padding: 0;
 	margin: 0;
@@ -6,7 +10,7 @@ body.app-tpl{
 header{
 	position: fixed !important;
 	height: 50px;
-	background-color: #1A2530;
+	background-color: $darkBlue;
 	z-index: 999;
 	h3{
 		margin: 0;
@@ -18,7 +22,7 @@ header{
 		a:active{color: #FFFFFF;}
 		&+span{
 			display: inline-block;
-			color: #ffffff;
+			color: #FFFFFF;
 		}
 	}
 }
@@ -27,17 +31,26 @@ aside{
 	position: fixed !important;
 	height: calc(100% - 50px);
 	margin-top: 50px;
-	background-color: #2C3E50;
+	background-color: $lightBlue;
 	color: #FFFFFF;
 	ul{
 		margin: 0;
 		padding: 0;
+		li:first-child{
+			span{
+				display: block;
+				margin-bottom: 15px;
+				color: $red;
+			}
+			margin-top: 15px;
+			color: #000000;
+		}
 		li{
 			list-style-type: none;
 			a{
-				color: #E74C3C;
+				color: $red;
 				line-height: 40px;
-				&:hover{color: #E74C3C;}
+				&:hover{color: $red;}
 			}
 		}
 	}
