@@ -1,8 +1,11 @@
 var dapxApp = angular.module('dapxApp');
-dapxApp.controller('soccerCtrl', ['$scope','$http', function($scope, $http) {
-    $scope.test - "test soccer"
-    $http.get('http://www.reddit.com/r/soccer.json').success(function(data){
-        $scope.posts = data.data.children
-        $scope.subrd = data.data.children[0].data.subreddit
+
+dapxApp.controller('soccerCtrl', ['$scope','$http','subFactory', function($scope, $http, subFactory) {
+    $scope.loading = true;
+    $scope.posts = subFactory.getPosts('soccer').then(function(posts){
+    	$scope.loading = false;
+    	$scope.posts = posts;
+    }, function(msg){
+    	alert(msg);
     });
 }]);

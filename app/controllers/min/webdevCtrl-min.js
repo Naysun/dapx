@@ -1,1 +1,1 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("webdevCtrl",["$scope","$http",function(d,t){t.get("http://www.reddit.com/r/webdev.json").success(function(t){d.posts=t.data.children,d.subrd=t.data.children[0].data.subreddit})}]);
+var dapxApp=angular.module("dapxApp");dapxApp.controller("webdevCtrl",["$scope","$http","subFactory",function(t,o,p){t.loading=!0,t.posts=p.getPosts("webdev").then(function(o){t.loading=!1,t.posts=o},function(t){alert(t)})}]);

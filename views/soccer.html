@@ -1,6 +1,8 @@
-<h1>r/{{ subrd }}</h1>
+<h1 ng-hide="loading">r/{{ posts[0].data.subreddit }}</h1>
 
-<div ng-repeat="post in posts">
+<div ng-show="loading">Chargement...</div>
+
+<div ng-hide="loading" ng-repeat="post in posts">
 	<p>
 		<a href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a> – 
 		<a href="http://reddit.com{{ post.data.permalink }}" target="_blank">Thread</a>

@@ -1,1 +1,1 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("cardmagicCtrl",["$scope","$http",function(a,d){d.get("http://www.reddit.com/r/cardmagic.json").success(function(d){a.posts=d.data.children,a.subrd=d.data.children[0].data.subreddit})}]);
+var dapxApp=angular.module("dapxApp");dapxApp.controller("cardmagicCtrl",["$scope","$http","subFactory",function(a,t,o){a.loading=!0,a.posts=o.getPosts("cardmagic").then(function(t){a.loading=!1,a.posts=t},function(a){alert(a)})}]);

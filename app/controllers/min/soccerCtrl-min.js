@@ -1,1 +1,1 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("soccerCtrl",["$scope","$http",function(t,c){t.test-"test soccer",c.get("http://www.reddit.com/r/soccer.json").success(function(c){t.posts=c.data.children,t.subrd=c.data.children[0].data.subreddit})}]);
+var dapxApp=angular.module("dapxApp");dapxApp.controller("soccerCtrl",["$scope","$http","subFactory",function(o,t,p){o.loading=!0,o.posts=p.getPosts("soccer").then(function(t){o.loading=!1,o.posts=t},function(o){alert(o)})}]);

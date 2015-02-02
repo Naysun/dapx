@@ -1,0 +1,1 @@
+var dapxApp=angular.module("dapxApp");dapxApp.factory("subFactory",function(r,e,t){var s={posts:!1,getPosts:function(o){var p=e.defer();return r.get("http://www.reddit.com/r/"+o+".json").success(function(r,e){s.posts=r.data.children,t(function(){p.resolve(s.posts,s.subr)},2e3)}).error(function(r,e){p.reject("impossible de récupérer le subreddit...")}),p.promise}};return s});
