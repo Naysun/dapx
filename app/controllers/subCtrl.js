@@ -8,6 +8,15 @@ dapxApp.controller('subCtrl', ['$scope','$http','$location','subFactory', functi
 
     	$scope.subName = posts[0].data.subreddit;
     	$scope.posts = posts;
+
+    	$scope.sortPosts = function(sort){
+    		if (sort == 'popular') {
+    			$location.path($scope.subName);
+    		}
+    		else{
+    			$location.path($scope.subName+"/"+sort);
+    		};
+	    };
     }, function(msg){
     	alert(msg);
     });

@@ -78,6 +78,18 @@ aside{
 	float: right;
 	margin-top: 50px;
 	background-color: #FFFFFF;
+	
+	.sort{
+		padding-left: 0;
+		ul{
+			padding-left: 0;
+			margin-bottom: 15px;
+			li {
+				padding: 5px 20px;
+				display: inline-block;
+			}
+		}
+	}
 
 	.posts .post{
 		padding: 10px 0;

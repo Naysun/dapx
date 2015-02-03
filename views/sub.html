@@ -1,5 +1,25 @@
 <div ng-show="loading">Chargement...</div>
 
+<div ng-hide="loading" class="col-md-12 sort">
+	<ul>
+		<li>
+			<a ng-click="sortPosts('popular')" href="">Popular</a>
+		</li>
+		<li>
+			<a ng-click="sortPosts('new')" href="">New</a>
+		</li>
+		<li>
+			<a ng-click="sortPosts('rising')" href="">Rising</a>
+		</li>
+		<li>
+			<a ng-click="sortPosts('controversial')" href="">Controversial</a>
+		</li>
+		<li>
+			<a ng-click="sortPosts('top')" href="">Top</a>
+		</li>
+	</ul>
+</div>
+
 <div ng-hide="loading" class="posts">
 	<h1>r/{{ subName }}</h1>
 
