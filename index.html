@@ -35,10 +35,12 @@
 
 	<aside ng-controller="sidebarCtrl" class="col-md-4 col-lg-3">
 		<ul>
-			<li>
+			<li class="clearfix">
 				<span>Search for a subreddit :</span>
-				<input ng-model="inputSub" type="text" placeholder="Example : aww">
-				<button ng-click="gotoSub(inputSub)">Go!</button>
+				<form>
+					<input ng-model="inputSub" class="col-md-10" type="text" placeholder="Example : aww">
+					<input ng-click="gotoSub(inputSub)" class="col-md-2" type="submit" value="Go!">
+				</form>
 			</li>
 			<hr />
 			<li>

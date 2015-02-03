@@ -1,1 +1,1 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("mainCtrl",["$scope","$http",function(p,a){p.user="Nathan"}]);
+var dapxApp=angular.module("dapxApp");dapxApp.controller("mainCtrl",["$scope","$http","$location","subFactory",function(o,t,a,n){o.loading=!0,o.posts=n.getPosts("all").then(function(t){o.loading=!1,o.posts=t},function(o){alert(o)})}]);

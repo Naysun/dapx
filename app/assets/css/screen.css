@@ -36,6 +36,15 @@ aside {
         display: block;
         margin-bottom: 15px;
         color: #E74C3C; }
+      aside ul li:first-child form input {
+        height: 30px; }
+        aside ul li:first-child form input[type=text] {
+          padding: 0 0 0 10px;
+          border: none; }
+        aside ul li:first-child form input[type=submit] {
+          border: none;
+          background-color: #E74C3C;
+          color: #FFFFFF; }
     aside ul li {
       list-style-type: none; }
       aside ul li a {
@@ -51,3 +60,10 @@ aside {
   float: right;
   margin-top: 50px;
   background-color: #FFFFFF; }
+  #main .posts .post {
+    padding: 10px 0;
+    border-bottom: 1px solid #2C3E50; }
+    #main .posts .post .post-url {
+      padding-left: 0; }
+    #main .posts .post .post-permalink {
+      text-align: center; }

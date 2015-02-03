@@ -1,12 +1,10 @@
 <div ng-show="loading">Chargement...</div>
 
-<div ng-hide="loading">
+<div ng-hide="loading" class="posts">
 	<h1>r/{{ subName }}</h1>
 
-	<div ng-repeat="post in posts">
-		<p>
-			<a href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a> – 
-			<a href="http://reddit.com{{ post.data.permalink }}" target="_blank">Thread</a>
-		</p>
+	<div ng-repeat="post in posts" class="col-md-12 post">
+		<a class="col-md-10 post-url" href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a> 
+		<a class="col-md-2 post-permalink" href="http://reddit.com{{ post.data.permalink }}" target="_blank">See thread</a>
 	</div>
 </div>
