@@ -1,1 +1,0 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("soccerCtrl",["$scope","$http","subFactory",function(o,t,p){o.loading=!0,o.posts=p.getPosts("soccer").then(function(t){o.loading=!1,o.posts=t},function(o){alert(o)})}]);

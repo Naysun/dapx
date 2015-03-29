@@ -1,1 +1,1 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("mainCtrl",["$scope","$http","$location","subFactory",function(o,t,a,n){o.loading=!0,o.posts=n.getPosts("all").then(function(t){o.loading=!1,o.posts=t},function(o){alert(o)})}]);
+var dapxApp=angular.module("redditApp");dapxApp.controller("mainCtrl",["$scope","$http","$location","subFactory",function(t,o,n,a){t.loading=!0,t.posts=a.getPosts("all").then(function(o){t.loading=!1,t.posts=o},function(t){alert(t)})}]);

@@ -1,4 +1,4 @@
-var dapxApp = angular.module('dapxApp');
+var dapxApp = angular.module('redditApp');
 dapxApp.factory('subFactory', function($http, $q, $timeout) {
     var factory = {
     	posts : false,

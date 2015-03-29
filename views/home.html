@@ -1,9 +1,9 @@
 <div ng-show="loading">Chargement...</div>
 
-<div ng-hide="loading" class="posts">
+<div ng-hide="loading" class="posts clearfix">
 	<h1>r/all</h1>
 
-	<div ng-repeat="post in posts" class="col-md-12 post">
+	<div ng-repeat="post in posts" class="col-md-12 post clearfix">
 		<a class="col-md-10 post-url" href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a>
 		<a class="col-md-2 post-permalink" href="http://reddit.com{{ post.data.permalink }}" target="_blank">See thread</a>
 	</div>

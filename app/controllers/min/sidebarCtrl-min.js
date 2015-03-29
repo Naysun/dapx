@@ -1,1 +1,1 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("sidebarCtrl",["$scope","$location",function(p,o){p.gotoSub=function(p){o.path("/"+p)}}]);
+var dapxApp=angular.module("redditApp");dapxApp.controller("sidebarCtrl",["$scope","$location",function(o,p){o.gotoSub=function(o){p.path("/"+o)}}]);

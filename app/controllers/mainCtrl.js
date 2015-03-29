@@ -1,4 +1,4 @@
-var dapxApp = angular.module('dapxApp');
+var dapxApp = angular.module('redditApp');
 
 dapxApp.controller('mainCtrl', ['$scope','$http','$location','subFactory', function($scope, $http, $location, subFactory) {
     $scope.loading = true;

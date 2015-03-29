@@ -1,4 +1,4 @@
-var dapxApp = angular.module('dapxApp');
+var dapxApp = angular.module('redditApp');
 
 dapxApp.controller('subCtrl', ['$scope','$http','$location','subFactory', function($scope, $http, $location, subFactory) {
     var u = $location.path().substr(1);

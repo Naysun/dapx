@@ -1,1 +1,1 @@
-var dapxApp=angular.module("dapxApp",["ngRoute","ui.bootstrap"]);dapxApp.config(function(t){t.when("/",{templateUrl:"../../../views/home.html",controller:"mainCtrl"}).otherwise({templateUrl:"../../../views/sub.html",controller:"subCtrl"})});
+var dapxApp=angular.module("redditApp",["ngRoute","ui.bootstrap"]);dapxApp.config(function(t){t.when("/",{templateUrl:"../../../views/home.html",controller:"mainCtrl"}).otherwise({templateUrl:"../../../views/sub.html",controller:"subCtrl"})});

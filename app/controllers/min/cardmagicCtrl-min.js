@@ -1,1 +1,0 @@
-var dapxApp=angular.module("dapxApp");dapxApp.controller("cardmagicCtrl",["$scope","$http","subFactory",function(a,t,o){a.loading=!0,a.posts=o.getPosts("cardmagic").then(function(t){a.loading=!1,a.posts=t},function(a){alert(a)})}]);

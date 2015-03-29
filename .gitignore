@@ -2,3 +2,7 @@
 *.codekit
 
 config.rb
+
+*.scssc
+
+*.swp

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr" ng-app="dapxApp">
+<html lang="fr" ng-app="redditApp">
 
 <head>
 	<meta charset="UTF-8">
 
-	<title>Reddit app by Nathan Simon &amp; Julien Blouet</title>
+	<title>Reddit app</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="../app/assets/css/screen.css">
 	<link rel="stylesheet" href="../app/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -28,54 +28,32 @@
 
 <body class="app-tpl container-fluid">
 
-	<header class="col-md-12">
-		<h3><a href="#">Reddit app</a></h3>
-		<span> - By Nathan Simon &amp; Julien Blouet</span>
-	</header>
-
-	<aside ng-controller="sidebarCtrl" class="col-md-4 col-lg-3">
-		<ul>
-			<li class="clearfix">
-				<span>Search for a subreddit :</span>
-				<form>
-					<input ng-model="inputSub" class="col-md-10" type="text" placeholder="Example : aww">
-					<input ng-click="gotoSub(inputSub)" class="col-md-2" type="submit" value="Go!">
-				</form>
-			</li>
-			<hr>
-			<li>
+	<div class="col-md-12 no-gutter">
+		<div class="menu-wrap">
+			<nav class="menu-top">
+				<div class="profile"><img src="../app/assets/img/user.jpg" alt="ShaolinShadowboxin"/><span>ShaolinShadowboxin</span></div>
+				<div class="user-menu">
+					<a href="#">Logout</a>
+				</div>
+			</nav>
+			<nav class="menu-side">
 				<a href="#soccer">r/soccer</a>
-				<p>News, results and discussion about the beautiful game.</p>
-			</li>
-			<hr>
-			<li>
 				<a href="#webdev">r/webdev</a>
-				<p>Want to know what's new for Web Developers? You're in the right place!</p>
-			</li>
-			<hr>
-			<li>
 				<a href="#todayilearned">r/todayilearned</a>
-				<p>This is a place to discuss and share anything related to wonderful craft of card magic.</p>
-			</li>
-			<hr>
-			<li>
-				<a href="#aww">r/aww</a>
-				<p>Things that make you go AWW! -- like puppies, and bunnies, and so on...</p>
-			</li>
-			<hr>
-			<li>
 				<a href="#cardmagic">r/cardmagic</a>
-				<p>This is a place to discuss and share anything related to wonderful craft of card magic.</p>
-			</li>
-		</ul>
-	</aside>
+			</nav>
+		</div>
+		<button class="menu-button" id="open-button">Open Menu</button>
 
-	<div id="main" class="col-md-offset-4 col-md-8 col-lg-offset-3 col-lg-9">
-		<div ng-view></div>
-	</div>
+		<div id="main" class="col-xs-12 content-wrap">
+			<div class="content col-md-12" ng-view></div>
+		</div>
+	</div><!-- /container -->
 
 	<!-- JS -->
 	<script src="../app/assets/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../app/assets/js/classie.js"></script>
+	<script src="../app/assets/js/main.js"></script>
 	<script src="../app/assets/bower_components/angular-ui-bootstrap-bower/ui-bootstrap.min.js"></script>
 </body>
 
