@@ -1,6 +1,6 @@
 var dapxApp = angular.module('redditApp');
 
-dapxApp.controller('subCtrl', ['$scope','$http','$location','subFactory', function($scope, $http, $location, subFactory) {
+dapxApp.controller('subCtrl', ['$scope','$http','$location','$sce','subFactory', function($scope, $http, $location, $sce, subFactory) {
     var u = $location.path().substr(1);
     $scope.loading = true;
     $scope.posts = subFactory.getPosts(u).then(function(posts){
@@ -20,4 +20,14 @@ dapxApp.controller('subCtrl', ['$scope','$http','$location','subFactory', functi
     }, function(msg){
     	alert(msg);
     });
+
+    $scope.sortThread = function(permalk){
+        $scope.thread = subFactory.getThread(permalk).then(function(comments){
+
+        $scope.comments = comments;
+
+        }, function(msg){
+            alert(msg);
+        });
+    }
 }]);

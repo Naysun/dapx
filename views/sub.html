@@ -1,30 +1,39 @@
 <div ng-show="loading">Chargement...</div>
 
-<div ng-hide="loading" class="posts">
-	<h1 class="col-xs-12 col-md-6">r/{{ subName }}</h1>
-	<div ng-hide="loading" class="col-xs-12 col-md-6 sort">
-		<ul>
-			<li>
-				<a ng-click="sortPosts('popular')" href="">Popular</a>
-			</li>
-			<li>
-				<a ng-click="sortPosts('new')" href="">New</a>
-			</li>
-			<li>
-				<a ng-click="sortPosts('rising')" href="">Rising</a>
-			</li>
-			<li>
-				<a ng-click="sortPosts('controversial')" href="">Controversial</a>
-			</li>
-			<li>
-				<a ng-click="sortPosts('top')" href="">Top</a>
-			</li>
-		</ul>
+<div ng-hide="loading">
+	<div class="col-xs-12 sub">
+		<h1 class="sub-name">r/{{ subName }}</h1>
+		<div class="sub-sorts">
+			<ul>
+				<li>
+					<a ng-click="sortPosts('popular')" href="javascript:void(0);">Popular</a>
+				</li>
+				<li>
+					<a ng-click="sortPosts('new')" href="javascript:void(0);">New</a>
+				</li>
+				<li>
+					<a ng-click="sortPosts('rising')" href="javascript:void(0);">Rising</a>
+				</li>
+				<li>
+					<a ng-click="sortPosts('controversial')" href="javascript:void(0);">Controversial</a>
+				</li>
+				<li>
+					<a ng-click="sortPosts('top')" href="javascript:void(0);">Top</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 
+	<div class="col-xs-6 posts">
+		<div ng-repeat="post in posts" class="col-xs-12 post">
+			<a class="col-md-10 post-url" href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a> 
+			<a class="col-md-2 post-permalink" ng-click="sortThread(post.data.permalink)" href="javascript:void(0);">See thread</a>
+		</div>
+	</div>
 
-	<div ng-repeat="post in posts" class="col-md-12 post">
-		<a class="col-md-10 post-url" href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a> 
-		<a class="col-md-2 post-permalink" href="http://reddit.com{{ post.data.permalink }}" target="_blank">See thread</a>
+	<div class="col-xs-6 thread">
+		<div ng-repeat="comment in comments" class="col-xs-12 comment">
+			{{ comment.data.body }}
+		</div>
 	</div>
 </div>

@@ -1,0 +1,1 @@
+var dapxApp=angular.module("redditApp");dapxApp.controller("threadCtrl",["$scope","$http","$location","subFactory",function(t,p,a,o){t.test="test"}]);

@@ -1,4 +1,4 @@
-var dapxApp = angular.module('redditApp', ['ngRoute','ui.bootstrap']);
+var dapxApp = angular.module('redditApp', ['ngRoute','ui.bootstrap','ngSanitize']);
 
 dapxApp.config(function($routeProvider) {
     $routeProvider

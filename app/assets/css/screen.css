@@ -146,24 +146,29 @@ header {
   #main h1 {
     padding-left: 60px;
     padding-top: 4px; }
-  #main .sort {
-    margin-top: 20px;
-    padding-top: 4px;
-    height: 44px;
-    line-height: 44px;
+  #main .sub {
+    padding-left: 0; }
+    #main .sub .sub-sorts {
+      margin-top: 20px;
+      padding-top: 4px;
+      height: 45px; }
+      #main .sub .sub-sorts ul {
+        display: inline-block;
+        padding-left: 0;
+        margin-bottom: 15px; }
+        #main .sub .sub-sorts ul li {
+          padding: 5px 20px;
+          display: inline-block; }
+          #main .sub .sub-sorts ul li:first-child {
+            padding-left: 0; }
+  #main .posts {
+    padding-left: 0; }
+    #main .posts .post {
+      padding: 10px 0;
+      border-bottom: 1px solid #2C3E50; }
+      #main .posts .post .post-url {
+        padding-left: 0; }
+      #main .posts .post .post-permalink {
+        text-align: right; }
+  #main .thread {
     padding-right: 0; }
-    #main .sort ul {
-      float: right;
-      display: inline-block;
-      padding-left: 0;
-      margin-bottom: 15px; }
-      #main .sort ul li {
-        padding: 5px 20px;
-        display: inline-block; }
-  #main .posts .post {
-    padding: 10px 0;
-    border-bottom: 1px solid #2C3E50; }
-    #main .posts .post .post-url {
-      padding-left: 0; }
-    #main .posts .post .post-permalink {
-      text-align: right; }
