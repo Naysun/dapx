@@ -30,6 +30,21 @@ dapxApp.factory('subFactory', function($http, $q, $timeout) {
                     deferred.reject('Impossible de récupérer les données...')
                 });
             return deferred.promise;
+        },
+
+        getThreadTitle : function(permalink){
+            var deferred = $q.defer();
+            $http.get('http://www.reddit.com'+permalink+'.json')
+                .success(function(data, status){
+                    factory.threadtitle = data[0].data.children;
+                    $timeout(function(){
+                        deferred.resolve(factory.threadtitle);
+                    }, 2000);
+                })
+                .error(function(data, status){
+                    deferred.reject('Impossible de récupérer les données...')
+                });
+            return deferred.promise;
         }
     }
     return factory;

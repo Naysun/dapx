@@ -23,11 +23,28 @@ dapxApp.controller('subCtrl', ['$scope','$http','$location','$sce','subFactory',
 
     $scope.sortThread = function(permalk){
         $scope.thread = subFactory.getThread(permalk).then(function(comments){
-
         $scope.comments = comments;
 
         }, function(msg){
             alert(msg);
         });
+
+        $scope.threadtitle = subFactory.getThreadTitle(permalk).then(function(thrdtitle){
+        $scope.thrdtitle = thrdtitle;
+
+        }, function(msg){
+            alert(msg);
+        });
+    };
+
+    $scope.activate= function(index){
+        $scope.index=index;
+    };
+
+    $scope.htmlDecode = function(input){
+        var e = document.createElement('div');
+        e.innerHTML = input;
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
     }
+
 }]);

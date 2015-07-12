@@ -1,39 +1,42 @@
 <div ng-show="loading">Chargement...</div>
 
 <div ng-hide="loading">
-	<div class="col-xs-12 sub">
+	<div class="col-xs-12 sub no-gutter">
 		<h1 class="sub-name">r/{{ subName }}</h1>
-		<div class="sub-sorts">
+		<div class="col-xs-6 sub-sorts no-gutter">
 			<ul>
 				<li>
-					<a ng-click="sortPosts('popular')" href="javascript:void(0);">Popular</a>
+					<a ng-click="sortPosts('popular')" href="javascript:void(0);" class="btn btn-default" type="button">Popular</a>
 				</li>
 				<li>
-					<a ng-click="sortPosts('new')" href="javascript:void(0);">New</a>
+					<a ng-click="sortPosts('new')" href="javascript:void(0);" class="btn btn-default" type="button">New</a>
 				</li>
 				<li>
-					<a ng-click="sortPosts('rising')" href="javascript:void(0);">Rising</a>
+					<a ng-click="sortPosts('rising')" href="javascript:void(0);" class="btn btn-default" type="button">Rising</a>
 				</li>
 				<li>
-					<a ng-click="sortPosts('controversial')" href="javascript:void(0);">Controversial</a>
+					<a ng-click="sortPosts('controversial')" href="javascript:void(0);" class="btn btn-default" type="button">Controversial</a>
 				</li>
 				<li>
-					<a ng-click="sortPosts('top')" href="javascript:void(0);">Top</a>
+					<a ng-click="sortPosts('top')" href="javascript:void(0);" class="btn btn-default" type="button">Top</a>
 				</li>
 			</ul>
+		</div>
+
+		<div class="col-xs-6 current-post-title">
+			<h3>{{ thrdtitle[0].data.title }}</h3>
 		</div>
 	</div>
 
 	<div class="col-xs-6 posts">
-		<div ng-repeat="post in posts" class="col-xs-12 post">
+		<div ng-repeat="post in posts" data-ng-class="{post:true, active:index==$index}" class="col-xs-12 post" >
 			<a class="col-md-10 post-url" href="{{ post.data.url }}" target="_blank">{{ post.data.title }}</a> 
-			<a class="col-md-2 post-permalink" ng-click="sortThread(post.data.permalink)" href="javascript:void(0);">See thread</a>
+			<a class="col-md-2 post-permalink" ng-click="sortThread(post.data.permalink); activate($index)" href="javascript:void(0);">See thread</a>
 		</div>
 	</div>
 
 	<div class="col-xs-6 thread">
-		<div ng-repeat="comment in comments" class="col-xs-12 comment">
-			{{ comment.data.body }}
+		<div ng-repeat="comment in comments" ng-bind-html="htmlDecode(comment.data.body_html)" class="col-xs-12 comment">
 		</div>
 	</div>
 </div>

@@ -1,6 +1,7 @@
 $red : #E74C3C;
 $darkBlue : #1A2530;
-$lightBlue : #2C3E50;
+$grey : #EEEEEE;
+$lightGrey : #FAFAFA;
 
 html, body{
 	height: 100%;
@@ -9,12 +10,17 @@ html, body{
 body.app-tpl{
 	padding: 0;
 	margin: 0;
-	background-color: $lightBlue;
+	background-color: $grey;
 	& > .no-gutter{
 		padding-left: 0;
 		padding-right: 0;
 		height: 100%;
 	}
+}
+
+.no-gutter{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 // Menu
@@ -184,9 +190,9 @@ header{
 		padding-top: 4px;
 	}
 	.sub{
-		padding-left: 0;
 		.sub-sorts{
 			margin-top: 20px;
+			margin-bottom: 20px;
 			padding-top: 4px;
 			height: 45px;
 			ul{
@@ -194,9 +200,12 @@ header{
 				padding-left: 0;
 				margin-bottom: 15px;
 				li {
-					padding: 5px 20px;
+					padding: 5px;
 					display: inline-block;
 					&:first-child{padding-left: 0;}
+					a{
+						border-color: $grey;
+					}
 				}
 			}
 		}
@@ -206,7 +215,13 @@ header{
 		padding-left: 0;
 		.post{
 			padding: 10px 0;
-			border-bottom: 1px solid $lightBlue;
+			border-top: 1px solid $grey;
+			&.active{
+				background-color: $lightGrey;
+				.post-url{
+					padding-left: 15px;
+				}
+			}
 			.post-url{
 				padding-left: 0;
 			}
@@ -218,5 +233,10 @@ header{
 
 	.thread{
 		padding-right: 0;
+		.comment{
+			padding: 10px 15px;
+			background-color: $lightGrey;
+			border-bottom: 2px solid $grey;
+		}
 	}
 }
